@@ -1,10 +1,10 @@
 import './style.css';
-import { clearByCompleted } from '../modules/interactive';
 import {
   renderTasks,
   addTask as Add,
   editTask as Edit,
 } from '../modules/app.js';
+import { clearByCompleted, markCompleted } from '../modules/interactive.js';
 
 class Task {
   constructor(taskArray) {
@@ -15,7 +15,8 @@ class Task {
     renderTasks(this.taskArray);
     Add(this.addtask, this.taskArray);
     Edit(this.taskArray, this.addtask);
-    clearByCompleted(this.taskArray, this.addtask);
+    clearByCompleted(this.taskArray);
+    markCompleted(this.taskArray, this.addtask);
   };
 
   addtask = (data) => {
